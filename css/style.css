@@ -1,0 +1,223 @@
+ /* Estilos para hacer que el carrusel ocupe toda la pantalla */
+ .carousel-item {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Estilo del jumbotron */
+  .jumbotron-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+  }
+
+  .jumbotron-content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+
+  .jumbotron-content p {
+    font-size: 1.5rem;
+  }
+
+  /* Estilo del fondo oscuro para resaltar el texto */
+  .carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+  }
+
+
+
+
+
+
+
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Efecto Fade */
+  /* Clase base para los elementos que tendrán el efecto fade-in */
+  .fade-in-section {
+    /* Inicialmente, el elemento es invisible (completamente transparente) */
+    opacity: 0;
+
+    /* Mueve ligeramente el elemento hacia abajo, creando un efecto de "subir" al aparecer */
+    transform: translateY(20px);
+
+    /* Define una transición suave para la opacidad y el movimiento (1 segundo de duración) */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+
+  /* Cuando el elemento es visible (cuando el JS agrega la clase 'visible') */
+  .fade-in-section.visible {
+    /* El elemento se vuelve completamente visible */
+    opacity: 1;
+
+    /* Elimina el desplazamiento hacia abajo, lo devuelve a su posición original */
+    transform: translateY(0);
+  }
+
+
+
+
+  .card-container {
+    perspective: 1000px;
+    margin: 50px auto;
+    width: 320px;
+  }
+  
+  .card {
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;  /* Esconde la cara trasera cuando está de frente */
+    border-radius: 15px;
+  }
+  
+  /* Frente de la tarjeta */
+  .front {
+    background: linear-gradient(135deg, #2a5298, #1e3c72);  /* Gradiente de color frontal */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Reverso de la tarjeta */
+  .back {
+    background: linear-gradient(135deg, #333, #1a1a1a);  /* Gradiente de color trasero */
+    color: white;
+    transform: rotateY(180deg);  /* Rotación para el reverso */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo para la tarjeta volteada */
+  .card.flip {
+    transform: rotateY(180deg);  /* Voltea la tarjeta */
+  }
+  
+  /* Número de tarjeta */
+  .card-number {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  
+  /* Nombre del titular */
+  .card-name {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Fecha de expiración */
+  .card-expiry {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+  
+  /* Logotipo de la tarjeta */
+  .card-logo {
+    width: 60px;
+    align-self: flex-end;
+  }
+  
+  /* Chip de la tarjeta */
+  .card-chip {
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(135deg, #d4d4d4, #a6a6a6);
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  /* CVC en el reverso */
+  .back .cvc {
+    text-align: right;
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  
+  /* Banda magnética en el reverso */
+  .back .magnetic-strip {
+    width: 100%;
+    height: 40px;
+    background: black;
+    margin-top: 20px;
+  }
+  
